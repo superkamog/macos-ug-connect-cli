@@ -21,7 +21,7 @@ echo refuse-mschap-v2 >> ~/.ppprc
 if [ $(command -v brew) == "" ]; then
     echo "Для работы скрипта необходимо установить Homebrew"
     echo "https://brew.sh/"
-    
+    exit 1
 fi
 
 #Прверяем наличие totp
