@@ -98,7 +98,7 @@ macosvpn create \
 #Создаем скрипт для подключения
 echo '#!/bin/bash' > ~/usergateconnect.sh
 echo 'user="$(security find-generic-password -s "usergate_secret" | grep acct | cut -c 18- | tr -d \'\"' | tr -d '\' \'')"' >> ~/usergateconnect.sh
-echo 'pass="$(security find-generic-password -s "usergate_secret" -w):$(totp get ug)"' >> ~/usergateconnect.sh
+echo 'pass="$(security find-generic-password -s "usergate_secret" -w):$(totp get usergate_totp)"' >> ~/usergateconnect.sh
 echo 'sec="$(security find-generic-password -s "usergate_secret" | grep icmt | cut -c 18- | tr -d \'\"' | tr -d '\' \'')"' >> ~/usergateconnect.sh
 echo 'scutil --nc start "UserGateConnection" --user "$user" --password "$pass" --secret "$sec"' >> ~/usergateconnect.sh
 
