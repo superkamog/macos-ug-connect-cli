@@ -22,6 +22,8 @@ if [ $(command -v brew) == "" ]; then
     echo "Для работы скрипта необходимо установить Homebrew"
     echo "https://brew.sh/"
     exit 1
+else
+    brew update
 fi
 
 #Прверяем наличие totp
