@@ -21,6 +21,7 @@ echo refuse-mschap-v2 >> ~/.ppprc
 if [ $(command -v brew) == "" ]; then
     echo "Для работы скрипта необходимо установить Homebrew"
     echo "https://brew.sh/"
+    echo "Не игнорируй послеустановочные скрипты brew!"
     exit 1
 else
     brew update
