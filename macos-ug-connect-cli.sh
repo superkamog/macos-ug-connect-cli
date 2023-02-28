@@ -18,7 +18,7 @@ echo refuse-mschap >> ~/.ppprc
 echo refuse-mschap-v2 >> ~/.ppprc
 
 #Прверяем наличие Homebrew
-if [ $(command -v brew) == "" ]; then
+if [[ -z "$(command -v brew)" ]]; then
     echo "Для работы скрипта необходимо установить Homebrew"
     echo "https://brew.sh/"
     echo "Не игнорируй послеустановочные скрипты brew!"
@@ -28,36 +28,36 @@ else
 fi
 
 #Прверяем наличие totp
-if [ $(command -v totp) == "" ]; then
+if [[ -z "$(command -v totp)" ]]; then
     echo "Устанавливаем totp"
     brew install simnalamburt/x/totp
 fi
 
 #Прверяем наличие macosvpn
-if [ $(command -v macosvpn) == "" ]; then
+if [[ -z "$(command -v macosvpn)" ]]; then
     echo "Устанавливаем macosvpn"
     brew install macosvpn
 fi
 
 #Выясняем переменные
 echo -n "Логин: "
-read login
+read -r login
 login="$(tr -d ' ' <<< "$login")"
 
 echo -n "Пароль: "
-read -s password
+read -sr password
 password="$(tr -d ' ' <<< "$password")"
 
 echo -ne "\nАдрес VPN-сервера: "
-read server
+read -r server
 server="$(tr -d ' ' <<< "$server")"
 
 echo -n "PreSharedSecret: "
-read -s sharedsecret
+read -sr sharedsecret
 sharedsecret="$(tr -d ' ' <<< "$sharedsecret")"
 
 echo -ne "\nTOTP: "
-read totpcode
+read -r totpcode
 totpcode="$(tr -d ' ' <<< "$totpcode")"
 totpcode="$(tr '[:lower:]' '[:upper:]' <<< "$totpcode")"
 
