@@ -7,8 +7,9 @@ curl -fsSL https://github.com/superkamog/macos-ug-connect-cli/releases/download/
 chmod +x ~/macos-ug-connect-cli.sh
 ./macos-ug-connect-cli.sh
 ```
-Для работы скрипта необходим Homebrew, macos-totp-cli и macosvpn.
-Не игнорируйте послучатновочные скрипты Homebrew.
+Для работы скрипта необходим [Homebrew](https://github.com/Homebrew/install), [macos-totp-cli](https://github.com/simnalamburt/macos-totp-cli) и [macosvpn](https://github.com/halo/macosvpn).
+
+Не игнорируйте послеуcтановочные скрипты Homebrew.
 
 ## Запуск
 После запуска скрипта он попросит у вас данные:
